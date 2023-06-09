@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostCOntroller extends Controller
@@ -29,6 +30,23 @@ class PostCOntroller extends Controller
     //creando metodo "crate" para formulario de publicaciones
     public function create(){
         //dd("creando publicacion");
-        return view('auth.crear');
+        return view('post.create');
     }
+
+    public function store(Request $request){
+        //validaciones del formilario de registro usando name
+        $validateData = $request->validate([
+            'titulo'=>'required',
+            'descripcion'=>'required',
+        ]);
+        Post::create([
+            'titulo'=>$validateData['titulo'],
+            'descripcion'=>$validateData['descripcion'],
+        ]);
+
+        return redirect()->route('post.index');
+    }
+
+
 }
+

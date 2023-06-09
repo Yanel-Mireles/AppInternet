@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -15,12 +16,15 @@ class RegisterController extends Controller
 
     public function store(Request $request){
 
+        
+        $request->request->add(['username'=>STR::slug($request->username)]);
 
         /* `->validate()` es un método en Laravel que valida los datos de solicitud HTTP
         entrantes. En este caso, está validando los datos del objeto ``, que es una
         instancia de la clase `Illuminate\Http\Request`. */
         $this->validate($request,[
             'name'=>'required',
+            'username' => 'required|unique:users|min:3|max:20',
             'email'=>'required|unique:users|email|',
             'password'=>'required|confirmed|min:6',
             'password_confirmation'=>'',
@@ -31,6 +35,7 @@ class RegisterController extends Controller
         de un proceso de registro para una aplicación Laravel. */
         User::create([
             'name'=>$request->name,
+            'username' => $request->username,
             'email'=>$request->email,
             'password'=>Hash::make($request->password),
         ]);

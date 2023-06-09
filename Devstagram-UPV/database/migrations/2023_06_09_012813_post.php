@@ -11,18 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
+        Schema::create('post', function (Blueprint $table) {
+            //Agregar campo a la tabla de usuarios UNICO
+            $table->string('titulo');
+            $table->string('descripcion');
+            $table->timestamps();
+
         });
     }
-
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('post');
     }
+
+
 };
