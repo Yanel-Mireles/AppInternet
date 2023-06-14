@@ -28,7 +28,7 @@ class ImagenController extends Controller
         //pasamos la imagen de memoria al server
         $imagenServidor->save($imagenPath);
         //verificamos el nombre del archivo se ponga como unique
-        return response()->json(['image' => $nombreImagen]); //verificar en terminal el cambio del nombre
+        return response()->json(['imagen' => $nombreImagen]); //verificar en terminal el cambio del nombre
     
     }
 
