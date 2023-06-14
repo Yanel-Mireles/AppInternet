@@ -8,10 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+    //forzar el nombre de la tabla Post en singular
     protected $table = 'post';
     //public $timestamps=false;
     protected $fillable = [
         'titulo',
-        'descripcion',    
+        'descripcion',
+        'imagen',
+        'user_id', 
     ];
 }

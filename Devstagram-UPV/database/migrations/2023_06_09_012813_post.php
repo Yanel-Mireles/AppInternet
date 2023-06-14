@@ -13,8 +13,14 @@ return new class extends Migration
     {
         Schema::create('post', function (Blueprint $table) {
             //Agregar campo a la tabla de usuarios UNICO
-            $table->string('titulo');
-            $table->string('descripcion');
+            $table -> id();
+            $table ->string('titulo');
+            $table->text('descripcion');
+            $table->string('imagen');
+            
+            //agregamos el usuario asociado al post del publicacion: una relacion user-post
+            $table->foreignId('user_id') -> constrained()->onDelete('cascade');
+            //onDelete (cascade) sigifica que si un usuario se elimna, se eliminan sus post de publicaciones 
             $table->timestamps();
 
         });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class PostCOntroller extends Controller
 {
@@ -34,14 +35,34 @@ class PostCOntroller extends Controller
     }
 
     public function store(Request $request){
-        //validaciones del formilario de registro usando name
+        //validaciones del formulario de registro usando name
         $validateData = $request->validate([
             'titulo'=>'required',
             'descripcion'=>'required',
+            'imagen'=>'required',
         ]);
-        Post::create([
-            'titulo'=>$validateData['titulo'],
-            'descripcion'=>$validateData['descripcion'],
+        // Post::create([
+        //     // 'titulo'=>$validateData['titulo'],
+        //     // 'descripcion'=>$validateData['descripcion'],
+        //     // 'imagen'=>$validateData['imagen'],
+        //     'titulo'=>$request->titulo,
+        //     'descripcion'=>$request->descripcion,
+        //     'imagen'=>$request->imagen,
+        //     //identificamos el usuario autenticado
+        //     'user_id'=>auth()->user()->id,
+        //     //redireccionamos al muro pricipal
+            
+        // ]);
+
+        //guardar registro con relaciones (E-R)
+        //"Post" es el nombre de la relacion
+
+        $request->user()->post()->create([
+            'titulo'=>$request->titulo,
+            'descripcion'=>$request->descripcion,
+            'imagen'=>$request->imagen,
+            //identificamos el usuario autenticado
+            'user_id'=>auth()->user()->id,
         ]);
 
         return redirect()->route('post.index');

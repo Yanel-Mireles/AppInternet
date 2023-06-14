@@ -55,3 +55,10 @@ Route::post('/logout',[LogoutController::class,'store'])->name('logout');
 Route::get('post/create',[PostController::class,'create'])->name('post.create');
 
 Route::post('post/create',[PostController::class,'store'])->name('post.store');
+
+//ruta para cargar imagenes
+Route::post('/imagenes',[ImagenController::class,'store'])->name('imagenes.store');
+
+
+//ruta oara almacenar post
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
