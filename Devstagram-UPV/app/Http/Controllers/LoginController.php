@@ -27,8 +27,9 @@ class LoginController extends Controller
         if(!auth()->attempt($request->only('email','password'), $request->remember)){
             //Usar la directiva with para llenar los valores de la sesion
             return back()->with('mensaje','Credenciales incorrectas');
-        } else{ //Credenciales correctas
-            return redirect()->route('post.index');
         }
+        
+        return redirect()->route('post.index', auth()->user()->username);
+        
     }
 }

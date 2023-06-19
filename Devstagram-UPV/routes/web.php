@@ -40,7 +40,7 @@ Route::get('/crearCuenta',[RegisterController::class,'index'])->name('register')
 Route::post('/crearCuenta',[RegisterController::class,'store']);
 
 //Ruta para mostrar el dashboard del usuario identificado
-Route::get('/muro',[PostController::class,'index'])->name('post.index');
+// Route::get('/muro',[PostController::class,'index'])->name('post.index');
 
 //Ruta para login
 Route::get('/login',[LoginController::class,'index'])->name('login');
@@ -62,3 +62,11 @@ Route::post('/imagenes',[ImagenController::class,'store'])->name('imagenes.store
 
 //ruta oara almacenar post
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+
+
+
+//ruta para mostrar una imagen abierta con sus datos
+Route::get('/{user:username}/post/{post}', [PostController::class, 'show'])->name('post.show');
+
+//ruta oara mostrar ek dashboard del usuario autenticado 
+Route::get('/{user:username}',[PostController::class,'index'])->name('post.index');
