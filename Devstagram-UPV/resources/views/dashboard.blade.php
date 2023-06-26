@@ -55,10 +55,15 @@
             <div class="mt-4">
                 {{ $posts->links() }}
             </div>
+        {{-- Este bloque de código es una sentencia `else` que se ejecuta cuando la condición de la
+        sentencia --}}
         @else
             <p class="text-gray-600 uppercase text-sm text-center font-bold"> No hay publicaciones</p>
         @endif
 
+       {{-- condicional que comprueba si el usuario es un invitado (no ha iniciado
+       sesión). Si el usuario es un invitado, muestra un mensaje que le pide que inicie sesión para
+       comentar. Si el usuario no es un invitado (inició sesión), no muestra nada.--}}
         @guest
             <p class="text-gray-600 uppercase text-sm text-center font-bold">Debes iniciar sesión para comentar.</p>
         @endguest

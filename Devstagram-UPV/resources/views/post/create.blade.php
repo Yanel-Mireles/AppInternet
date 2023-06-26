@@ -16,6 +16,7 @@ Crea una nueva publicacion
     <div class="md:flex ms:items-center">
         <div class="md:w-1/2 px-10">
             imagen
+            <!-- Esta es la zona donde se puede arrastrar y soltar o seleccionar el archivo de imagen -->
             <form action="{{route('imagenes.store')}}" method="POST" enctype="multipart/form-data" id="dropzone" class="dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center mb-5" novalidate>
                 @csrf
             </form>

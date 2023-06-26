@@ -18,6 +18,10 @@ class Post extends Model
         'user_id', 
     ];
     
+    /*
+     * Esta función de PHP devuelve una colección de comentarios asociados con un modelo.
+     * 
+     */
     public function comments()
     {
     return $this->hasMany(Comment::class);

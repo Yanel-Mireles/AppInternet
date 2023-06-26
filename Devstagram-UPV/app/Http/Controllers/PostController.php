@@ -21,44 +21,11 @@ class PostCOntroller extends Controller
     }
 
     //clase que me redireccione al dashboad
-    // public function index(){
-    //     //Aplicar helper para revisar el usuario autenticado
-    //     // dd(auth()->user());
 
-    //     //Muestra la vista del dashboard
-    //     return view('dashboard');
-
-    // }
-
-    // public function index(){
-    //     // Obtén todos los posts de la base de datos
-    //     $posts = auth()->user()->post;
-    
-    //     if (isset($posts)){
-    //         // Pasa los posts a la vista de dashboard
-    //         return view('dashboard',compact('posts'));
-    //     }else{
-    //         $posts = [];
-    //         return view('dashboard',compact('posts'));
-    //     }
-
-    // }
-
-    // public function index(User $user){
-    //     //obtener los post de publicacion del usuario
-    //     $posts=Post::where('user_id',$user->id)->get();
-
-    //     //mostrar los post de publicacion del usuario
-    //     // dd($post);
-
-    //    return view('dashboard',[
-    //         'user' => $user,
-    //         //pasamos los valsores de los post de publicacion del usuario hacia la vista
-    //         'posts'=> $posts
-    //    ]);
-
-    // }
-
+    /*
+     * Esta función recupera y muestra publicaciones de un usuario específico en una vista de tablero.
+     * 
+     */
     public function index(User $user){
         // Obtenemos los Post de publicación del usuario
         $posts = Post::where('user_id',$user->id)->paginate(8);
@@ -86,19 +53,7 @@ class PostCOntroller extends Controller
             'descripcion'=>'required',
             'imagen'=>'required',
         ]);
-        // Post::create([
-        //     // 'titulo'=>$validateData['titulo'],
-        //     // 'descripcion'=>$validateData['descripcion'],
-        //     // 'imagen'=>$validateData['imagen'],
-        //     'titulo'=>$request->titulo,
-        //     'descripcion'=>$request->descripcion,
-        //     'imagen'=>$request->imagen,
-        //     //identificamos el usuario autenticado
-        //     'user_id'=>auth()->user()->id,
-        //     //redireccionamos al muro pricipal
-            
-        // ]);
-
+        
         //guardar registro con relaciones (E-R)
         //"Post" es el nombre de la relacion
 
@@ -113,14 +68,11 @@ class PostCOntroller extends Controller
         return redirect()->route('post.index', auth()->user()->username);
     }
 
-    // public function show(User $user, Post $post){
-    // $comments = Comment::where('post_id',$post->post_id)->latest()->get();
-    
-    //     return view('post.show', [
-    //         'post' => $post,
-    //         'user' => $user,
-    //         'comments' => $comments
-    //     ]);
+
+    /*
+     * Esta función muestra una publicación con sus comentarios y usuario asociados.
+     * 
+     */
     public function show(User $user, Post $post){
         $comments = $post->comments()->latest()->get();
         
@@ -130,6 +82,10 @@ class PostCOntroller extends Controller
             'comments' => $comments
         ]);  
     }
+    /*
+     * Esta función elimina una publicación si el usuario actual es el autor de la publicación.
+     * 
+     */
     public function destroy(Post $post)
     {
         // verifica si el usuario actual es el autor del post
