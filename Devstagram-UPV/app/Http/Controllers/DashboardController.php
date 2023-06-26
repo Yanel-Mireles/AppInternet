@@ -20,9 +20,18 @@ class DashboardController extends Controller
         });
     }
 
-    public function index(User $user){
-        return view("welcome",[
-            'user'=>$user
-        ]);
+    // public function index(User $user){
+    //     return view("welcome",[
+    //         'user'=>$user
+    //     ]);
+    // }
+    public function index()
+    {
+        // Obtener las publicaciones del usuario actual
+        $posts = auth()->user()->posts;
+
+        // Retornar la vista con las publicaciones
+        return view('inicio')->with('posts', $posts);
     }
+
 }

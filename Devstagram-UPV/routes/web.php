@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ImagenController;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,8 @@ Esta línea de código define una ruta GET para la URL raíz ("/") que se asigna
 
 // Ruta para vista página principal
 Route::get('/',[Dashboard::class,'inicio']);
+
+
 
 // se pueden crear alias
 // Ruta para vista registro de usuarios
@@ -63,10 +66,20 @@ Route::post('/imagenes',[ImagenController::class,'store'])->name('imagenes.store
 //ruta oara almacenar post
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 
+//ruta de comentarios
+Route::post('/post/{post}/comment', [CommentController::class, 'store'])->name('comment.store');
 
+//Route::post('/user');
 
 //ruta para mostrar una imagen abierta con sus datos
 Route::get('/{user:username}/post/{post}', [PostController::class, 'show'])->name('post.show');
+
+
+//...
+Route::delete('/post/{post}', [App\Http\Controllers\PostController::class, 'destroy'])->name('post.destroy');
+Route::delete('/comment/{comment}', [App\Http\Controllers\CommentController::class, 'destroy'])->name('comment.destroy');
+//...
+
 
 //ruta oara mostrar ek dashboard del usuario autenticado 
 Route::get('/{user:username}',[PostController::class,'index'])->name('post.index');

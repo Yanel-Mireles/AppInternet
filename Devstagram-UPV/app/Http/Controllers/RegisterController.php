@@ -49,6 +49,6 @@ class RegisterController extends Controller
 
         // Finalmente, redirige al usuario a la ruta `post.index`. Este código es parte
         // de un proceso de registro para una aplicación Laravel. 
-        return redirect()->route('post.index');
+        return redirect()->route('post.index', auth()->user()->username);
     }
 }

@@ -22,7 +22,7 @@
         <header class="p-5 border-b bg-zinc-950 shadow">
           <div class="container mx auto flex justify-between items-center bg-zinc-950">
             <h1 class="text-3xl font-bold text-zinc-50">
-              <a href="/">Devstagram</a>
+              <a href="{{ url('/') }}">Devstagram</a>
             </h1>
             {{-- Aplicar Helper de autenticación auth para verificar si esta autenticado --}}
             @auth
@@ -36,9 +36,14 @@
               Crear</a>
             <nav class="flex gap-2 items-center">
                 <span class="text-zinc-100">Hola: </span>
+
+                <a href="{{ route('post.index', auth()->user()->username) }}">
                   <span class="font-normal text-zinc-100">
                     {{auth()->user()->username}}
                   </span>
+                </a>
+                
+                  
                   {{-- Agregar seguridad a logout --}}
                 <form method="POST" action="{{route('logout')}}">
                   @csrf

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Comment;
+use Illuminate\Support\Facades\Auth; 
 
 class PostCOntroller extends Controller
 {
@@ -14,7 +16,7 @@ class PostCOntroller extends Controller
         //Protegemos la url
         //al metodo index con el contructor le pasamos el parametro de autenticación 
         
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['show','index']);
 
     }
 
@@ -111,11 +113,35 @@ class PostCOntroller extends Controller
         return redirect()->route('post.index', auth()->user()->username);
     }
 
-    public function show(User $user, Post $post)
+    // public function show(User $user, Post $post){
+    // $comments = Comment::where('post_id',$post->post_id)->latest()->get();
+    
+    //     return view('post.show', [
+    //         'post' => $post,
+    //         'user' => $user,
+    //         'comments' => $comments
+    //     ]);
+    public function show(User $user, Post $post){
+        $comments = $post->comments()->latest()->get();
+        
+        return view('post.show', [
+            'post' => $post,
+            'user' => $user,
+            'comments' => $comments
+        ]);  
+    }
+    public function destroy(Post $post)
     {
-        return view('post.show', ['post' => $post]);
+        // verifica si el usuario actual es el autor del post
+        if (Auth::user()->id !== $post->user_id) {
+            abort(403);
+        }
+
+        $post->delete();
+
+        return redirect()->route('post.index', auth()->user()->username)->with('status', 'Post eliminado correctamente!');
+    }
+    
     }
 
-
-}
 

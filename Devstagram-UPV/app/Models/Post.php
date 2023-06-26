@@ -17,4 +17,11 @@ class Post extends Model
         'imagen',
         'user_id', 
     ];
+    
+    public function comments()
+    {
+    return $this->hasMany(Comment::class);
+    }
+
 }
+
