@@ -53,8 +53,8 @@
                     <input id="password_confirmation" name="password_confirmation" type="password"
                         placeholder="Repetir Password de registro " class="border p-3 w-full rounded-lg @error('password_confirmation') border-red-500 @enderror" value="{{old('password_confirmation')}}"/>
                 </div>
-                {{-- <input type="submit" value="Crear cuenta"
-                    class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg" /> --}}
+                <input type="submit" value="Crear cuenta"
+                    class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg" />
             </form>
         </div>
     </div>
