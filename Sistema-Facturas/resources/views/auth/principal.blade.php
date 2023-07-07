@@ -4,7 +4,7 @@
 
 <!-- Crear el contenido que se envia al contenedor(@ yield) -->
 @section('titulo')
-  Buscar facturar
+  Buscar factura
 @endsection
 
 @section('contenido')
