@@ -13,8 +13,8 @@
         <!-- Font Awesome Icons -->
         <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
         <!-- Nucleo Icons -->
-        <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
-        <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
+        <link href="public/build/assets/css/nucleo-icons.css" rel="stylesheet" />
+        <link href="public/build/assets/css/nucleo-svg.css" rel="stylesheet" />
         <!-- Main Styling -->
         <link href="../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5" rel="stylesheet" />
 

@@ -5,7 +5,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LogoutController;
-use App\Http\Controllers\EmpEmisoraController;
 
 
 use App\Http\Controllers\EmisoraController;
@@ -48,9 +47,6 @@ Route::post('/logout',[LogoutController::class, 'store'])->name('logout');
 // Ruta para enviar datos al servidor
 Route::post('/crear', [RegisterController::class,'store']);
 
-
-
-Route::post('/empEmisora', [EmpEmisoraController::class, 'store'])->name('Emisora');
 
 // Ruta para redireccionar a la vista Emisora
 Route::get('/emisora', [EmisoraController::class,'index'])->name('empresa.emisora');
