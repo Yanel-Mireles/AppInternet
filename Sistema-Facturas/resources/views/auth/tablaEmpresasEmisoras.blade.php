@@ -24,6 +24,7 @@ Listado de empresas emisoras
                     <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
                       <thead class="align-bottom">
                         <tr>
+                          {{-- columnas de tablas --}}
                           <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">ID</th>
                           <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Razón social</th>
                           <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Email</th>
@@ -31,6 +32,9 @@ Listado de empresas emisoras
                           
                         </tr>
                       </thead>
+                     {{-- /* El código que proporcionó es un ciclo que itera sobre una colección de
+                     "emisoras" (empresas) y genera una fila de tabla para cada "emisora" en la
+                     colección. */ --}}
                       <tbody>
                         @forelse($emisoras as $emisora)
                         <tr>

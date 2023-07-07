@@ -9,12 +9,19 @@ class EmisoraController extends Controller
 {
     //
 
+   /**
+    * La función index recupera todas las emisoras de la base de datos y las pasa a la vista
+    * 'auth.tablaEmpresasEmisoras'.
+    */
     public function index()
     {
         $emisoras = Emisor::all();
         return view('auth.tablaEmpresasEmisoras', ['emisoras' => $emisoras]);
     }
 
+    /**
+     * La función de creación devuelve una vista para la plantilla "auth.emisora".
+     */
     public function create()
     {
         return view('auth.emisora');

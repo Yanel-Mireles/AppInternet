@@ -39,7 +39,7 @@
           <div class="w-full max-w-full px-3 flex-0">
             <!-- {{-- Navegacion --}} -->
             @auth
-            <!-- Navbar -->
+            <!-- Navbar con los enlaces para las paginas-->
             <nav class="absolute top-0 left-0 right-0 z-30 flex flex-wrap items-center px-4 py-2 mx-6 my-4 shadow-soft-2xl rounded-blur bg-white backdrop-blur-2xl backdrop-saturate-200 lg:flex-nowrap lg:justify-start">
               <div class="flex items-center justify-between w-full p-0 pl-6 mx-auto flex-wrap-inherit">
                 <a class="py-2.375 text-lg mr-4 ml-4 whitespace-nowrap font-bold text-slate-700 lg:ml-0" href="/"> Sistema de facturación </a>
@@ -53,18 +53,21 @@
                 <div navbar-menu class="items-center flex-grow overflow-hidden transition-all duration-500 ease-soft lg-max:max-h-0 basis-full lg:flex lg:basis-auto">
                   <ul class="flex flex-col pl-0 mx-auto mb-0 list-none lg:flex-row xl:ml-auto">
                     <li>
+                      {{-- empresa emisora --}}
                       <a class="flex items-center px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2" aria-current="page" href="{{route('empresa.emisora')}}">
                         <i class="mr-1 fa fa-chart-pie opacity-60"></i>
                         Registar empresa emisora
                       </a>
                     </li>
                     <li>
+                      {{-- empresa receptora --}}
                       <a class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2" href="{{route('empresa.receptora')}}">
                         <i class="mr-1 fa fa-chart-pie opacity-60"></i>
                         Registrar empresa receptora
                       </a>
                     </li>
                     <li>
+                      {{-- registrar factura --}}
                       <a class="block px-4 py-2 mr-2 font-normal transition-all lg-max:opacity-0 duration-250 ease-soft-in-out text-sm text-slate-700 lg:px-2" href="{{route('factura.tabla')}}">
                         <i class="mr-1 fa fa-chart-pie opacity-60"></i>
                         Registrar factura

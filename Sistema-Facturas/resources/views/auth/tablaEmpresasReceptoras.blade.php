@@ -12,7 +12,7 @@ Listado de empresas receptoras
     <a href="{{ route('crearEmpresaReceptora') }}"  class="inline-block w-full px-8 py-2 mb-0 font-bold text-center text-black uppercase transition-all ease-in bg-white border-0 border-white rounded-lg shadow-soft-md bg-150 leading-pro text-xs hover:shadow-soft-2xl hover:scale-102">Agregar empresa receptora</a>
     <div class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
         <div class="w-full px-6 py-6 mx-auto">
-          <!-- table 1 -->
+          <!-- table de empresas receptoras -->
     
           <div class="flex flex-wrap -mx-3">
             <div class="flex-none w-full max-w-full px-3">
@@ -32,9 +32,12 @@ Listado de empresas receptoras
                           <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Email</th>
                         </tr>
                       </thead>
+                      {{-- /* Este bloque de código es el encargado de mostrar los datos de las "empresas
+                      receptoras" en formato de tabla. */ --}}
                       <tbody>
                         @forelse($receptoras as $receptora)
                         <tr>
+                          {{-- id --}}
                           <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                             <div class="flex px-2 py-1">
                               <div class="flex flex-col justify-center">
@@ -42,6 +45,7 @@ Listado de empresas receptoras
                               </div>
                             </div>
                           </td>
+                          {{-- nombre --}}
                           <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                             <div class="flex px-2 py-1">
                               <div class="flex flex-col justify-center">
@@ -49,6 +53,7 @@ Listado de empresas receptoras
                               </div>
                             </div>
                           </td>
+                          {{-- direccion --}}
                           <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                             <div class="flex px-2 py-1">
                               <div class="flex flex-col justify-center">
@@ -56,6 +61,7 @@ Listado de empresas receptoras
                               </div>
                             </div>
                           </td>
+                          {{-- rfc --}}
                           <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                             <div class="flex px-2 py-1">
                               <div class="flex flex-col justify-center">
@@ -63,6 +69,7 @@ Listado de empresas receptoras
                               </div>
                             </div>
                           </td>
+                          {{-- contacto --}}
                           <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                             <div class="flex px-2 py-1">
                               <div class="flex flex-col justify-center">
@@ -70,6 +77,7 @@ Listado de empresas receptoras
                               </div>
                             </div>
                           </td>
+                          {{-- razon social --}}
                           <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                             <div class="flex px-2 py-1">
                               <div class="flex flex-col justify-center">
@@ -77,6 +85,7 @@ Listado de empresas receptoras
                               </div>
                             </div>
                           </td>
+                          {{-- email --}}
                           <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                             <div class="flex px-2 py-1">
                               <div class="flex flex-col justify-center">

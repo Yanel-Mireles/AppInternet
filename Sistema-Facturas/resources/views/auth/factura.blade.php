@@ -23,6 +23,7 @@
         <div class="w-full max-w-full px-3 mx-auto mt-0 md:flex-0 shrink-0 md:w-7/12 lg:w-5/12 xl:w-4/12">
           <div class="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
             <div class="flex-auto p-6">
+              {{-- formulario factura --}}
               <form role="form text-left" action="{{ route('facturacion.store') }}" method="POST" novalidate>
                 @csrf
 

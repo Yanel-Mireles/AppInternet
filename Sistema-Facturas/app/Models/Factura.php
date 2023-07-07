@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/* La clase Factura es un modelo en PHP que representa una factura y tiene relaciones con las clases
+Receptor y Emisor. */
 class Factura extends Model
 {
     use HasFactory;

@@ -10,7 +10,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\EmisoraController;
 use App\Http\Controllers\FacturaController;
 
-use App\Http\Controllers\PortalController;
+
 use App\Http\Controllers\ReceptoraController;
 use App\Http\Controllers\ArchivoController;
 use App\Models\Factura;
@@ -82,19 +82,12 @@ Route::post('/archivo/pdf', [ArchivoController::class, 'storepdf'])->name('archi
 Route::post('/archivo/xml', [ArchivoController::class, 'storexml'])->name('archivosxml.store');
 
 
-// Ruta para redireccionar a la vista Portal
-Route::get('/portal-web', [PortalController::class,'index'])->name('portal.web');
 
 
-// ruta para la tabla facturas
-
-// Route::get('/facturas', [FacturaController::class,'show'])->name('facturas.show');
-
-// Ruta para redireccionar a la vista Emisora
+// Ruta para redireccionar a la tabla facturas
 Route::get('/facturas', [FacturaController::class,'index'])->name('factura.tabla');
 
 // Muestra el formulario para crear una nueva empresa emisora
-// Route::get('/emisora/create', [EmisoraController::class, 'create'])->name('crearEmpresaEmisora');
 Route::get('/factura', [FacturaController::class, 'create'])->name('facturacion');
 
 Route::post('/buscar', [DashboardController::class,'buscar'])->name('buscar.factura');

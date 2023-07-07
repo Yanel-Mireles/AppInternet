@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/* La clase Receptor es un modelo en PHP que representa un receptor y tiene relación con la clase
+Factura. */
 class Receptor extends Model
 {
     use HasFactory;

@@ -8,12 +8,21 @@ use Illuminate\Http\Request;
 class ReceptoraController extends Controller
 {
     //
+   /**
+    * La función index recupera todos los objetos Receptor y los pasa a la vista
+    * 'auth.tablaEmpresasReceptoras'.
+    */
     public function index()
     {
         $receptoras = Receptor::all();
         return view('auth.tablaEmpresasReceptoras', ['receptoras' => $receptoras]);
     }
 
+/**
+ * La función de creación devuelve una vista de la plantilla "auth.receptora" en PHP.
+ * 
+ * @return Se está devolviendo la vista 'auth.receptora'.
+ */
     public function create()
     {
         return view('auth.receptora');

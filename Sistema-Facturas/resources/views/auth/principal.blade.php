@@ -28,6 +28,7 @@
               <div class="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
                   <div class="p-6 mb-0 text-center bg-white border-b-0 rounded-t-2xl">
                       <div class="flex-auto p-6">
+                        {{-- form buscar factura --}}
                           <form role="form text-left" action="{{route('buscar.factura')}}" method="POST">
                             @csrf  
                             <!-- Empresa emisora -->
