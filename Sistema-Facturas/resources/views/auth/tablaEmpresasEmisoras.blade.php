@@ -10,7 +10,7 @@ Listado de empresas emisoras
 
 <div class="container">
 
-    <a href="{{ route('crearEmpresaEmisora') }}"  class="inline-block w-full px-8 py-2 mb-0 font-bold text-center text-black uppercase transition-all ease-in bg-white border-0 border-white rounded-lg shadow-soft-md bg-150 leading-pro text-xs hover:shadow-soft-2xl hover:scale-102">Agregar empresa emisora</a>
+    <a href="{{ route('crearEmpresaEmisora') }}"  class="w-full inline-block px-6 py-3 mr-3 font-bold text-center uppercase align-middle transition-all bg-transparent border rounded-lg cursor-pointer border-gray-500 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 hover:scale-102 active:opacity-85 hover:shadow-soft-xs text-gray-600">Agregar empresa emisora</a>
     <div class="ease-soft-in-out xl:ml-68.5 relative h-full max-h-screen rounded-xl transition-all duration-200">
         <div class="w-full px-6 py-6 mx-auto">
           <!-- table 1 -->

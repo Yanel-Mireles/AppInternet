@@ -10,7 +10,7 @@
 
 @section('contenido')
 <section class="min-h-screen mb-32">
-    <div class="relative flex items-start pt-12 pb-56 m-4 overflow-hidden bg-center bg-cover min-h-50-screen rounded-xl" style="background-image: url('../assets/img/curved-images/curved14.jpg')">
+    <div class="relative flex items-start pt-12 pb-56 m-4 overflow-hidden bg-center bg-cover min-h-50-screen rounded-xl" style="background-image: url('{{asset ('img/curved-images/curved14.jpg')}}')">
       <span class="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-gray-900 to-slate-800 opacity-60"></span>
       <div class="container z-10">
         <div class="flex flex-wrap justify-center -mx-3">
@@ -20,7 +20,7 @@
     </div>
     <div class="container">
       <div class="flex flex-wrap -mx-3 -mt-48 md:-mt-56 lg:-mt-48">
-        <div class="w-full max-w-full px-3 mx-auto mt-0 md:flex-0 shrink-0 md:w-7/12 lg:w-5/12 xl:w-4/12">
+        <div class="w-full max-w-full px-3 mx-auto mt-0 md:flex-0 shrink-0 md:w-7/12 lg:w-5/12 xl:w-3/4">
           <div class="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-soft-xl rounded-2xl bg-clip-border">
             <div class="flex-auto p-6">
               {{-- formulario factura --}}
@@ -81,7 +81,7 @@
 
               
             {{-- Form para la subida de archivos --}}
-              <div class="w-full max-w-sm mx-2 mb-4 bg-white p-8 rounded-md shadow-sm shadow-black">
+              <div class="w-full max-w-3/4 mx-2 mb-4 bg-white  rounded-md ">
 
                   {{-- !Este es para la subida de pdf --}}
                   <div class="my-5">

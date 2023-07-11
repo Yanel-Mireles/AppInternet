@@ -2,6 +2,7 @@
 @import './nucleo-svg.css';
 @import './argon-dashboard-tailwind.css';
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
