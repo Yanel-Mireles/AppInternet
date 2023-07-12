@@ -1,12 +1,57 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-179954eb.css",
+    "file": "assets/app-80b7f1af.css",
     "isEntry": true,
     "src": "resources/css/app.css"
   },
+  "resources/css/nucleo-icons.css": {
+    "file": "assets/nucleo-icons-c4d6e163.css",
+    "isEntry": true,
+    "src": "resources/css/nucleo-icons.css"
+  },
+  "resources/css/nucleo-svg.css": {
+    "file": "assets/nucleo-svg-89acc85b.css",
+    "isEntry": true,
+    "src": "resources/css/nucleo-svg.css"
+  },
+  "resources/css/soft-ui-dashboard-tailwind.css": {
+    "file": "assets/soft-ui-dashboard-tailwind-bb47272e.css",
+    "isEntry": true,
+    "src": "resources/css/soft-ui-dashboard-tailwind.css"
+  },
   "resources/js/app.js": {
-    "file": "assets/app-0d91dc04.js",
+    "file": "assets/app-9012f20f.js",
     "isEntry": true,
     "src": "resources/js/app.js"
+  },
+  "resources/js/navbar-sticky.js": {
+    "file": "assets/navbar-sticky-6473aed6.js",
+    "isEntry": true,
+    "src": "resources/js/navbar-sticky.js"
+  },
+  "resources/js/plugins/Chart.extension.js": {
+    "file": "assets/Chart.extension-6dcca551.js",
+    "isEntry": true,
+    "src": "resources/js/plugins/Chart.extension.js"
+  },
+  "resources/js/plugins/chartjs.min.js": {
+    "file": "assets/chartjs.min-debe222f.js",
+    "isEntry": true,
+    "src": "resources/js/plugins/chartjs.min.js"
+  },
+  "resources/js/plugins/perfect-scrollbar.min.js": {
+    "file": "assets/perfect-scrollbar.min-62ac4145.js",
+    "isEntry": true,
+    "src": "resources/js/plugins/perfect-scrollbar.min.js"
+  },
+  "resources/js/soft-ui-dashboard-tailwind.js": {
+    "file": "assets/soft-ui-dashboard-tailwind-630b57c4.js",
+    "isEntry": true,
+    "src": "resources/js/soft-ui-dashboard-tailwind.js"
+  },
+  "resources/js/soft-ui-dashboard-tailwind.min.js": {
+    "file": "assets/soft-ui-dashboard-tailwind.min-d6a52dc0.js",
+    "isEntry": true,
+    "src": "resources/js/soft-ui-dashboard-tailwind.min.js"
   }
 }
