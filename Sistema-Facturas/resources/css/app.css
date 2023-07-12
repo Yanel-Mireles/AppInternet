@@ -1,7 +1,6 @@
 @import './nucleo-icons.css';
 @import './nucleo-svg.css';
-@import './argon-dashboard-tailwind.css';
-
+@import './soft-ui-dashboard-tailwind.css';
 
 @tailwind base;
 @tailwind components;
