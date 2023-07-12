@@ -23,7 +23,6 @@ class DashboardController extends Controller
         return view('auth.principal', ['facturas'=> $facturas,'emisores' => $emisores, 'receptores' => $receptores]);
     }
 
-    // funcion para buscar una factura
     public function buscar(Request $request)
     {
         // Validación de campos
@@ -35,24 +34,31 @@ class DashboardController extends Controller
         ]);
 
         // Obtener los valores de los campos del formulario
-        // $id_emisor_recibido = $request->input('emisor_rs');
         $id_emisor_recibido = $request->input('emisor_id');
         $rfc_receptor_recibido = $request->input('receptor_id');
+        $folio_recibido = $request->input('folio');
 
-        // Buscar la factura en la base de datos
-        $facturaEncontrada = Factura::where('emisor_id', $id_emisor_recibido)
-        ->where('receptor_id', $rfc_receptor_recibido)
-        // ->where('id', $id_recibido_factura)
-            ->first();
+        // Comienza la construcción de la consulta
+        $query = Factura::query();
+        $query->where('emisor_id', $id_emisor_recibido)
+            ->where('receptor_id', $rfc_receptor_recibido);
+        
+        // Si el folio está presente en la solicitud, se agrega a la consulta
+        if (!empty($folio_recibido)) {
+            $query->where('folio', $folio_recibido);
+        }
 
-        if ($facturaEncontrada) {
-            // Factura encontrada, mostrar mensaje de éxito
-            session()->flash('success', $facturaEncontrada->id);
+        $facturasEncontradas = $query->get();
+
+        if ($facturasEncontradas->isNotEmpty()) {
+            // Facturas encontradas, mostrar mensaje de éxito
+            session()->flash('success', $facturasEncontradas->pluck('id')->toArray());
         } else {
-            // Factura no encontrada, mostrar mensaje de error
+            // Facturas no encontradas, mostrar mensaje de error
             session()->flash('error');
         }
 
         return redirect()->route('dashboard')->withInput();
     }
+
 }

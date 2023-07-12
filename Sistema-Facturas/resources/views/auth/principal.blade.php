@@ -107,7 +107,7 @@
                           {{-- ! Si el di de Factura que se encuentra en la tabla
                       ! es igual al id de la factura que se selecciono en el formulario    
                       ! muestra la tabla --}}
-                          @if ($factura->id == session('success'))
+                            @if (in_array($factura->id, session('success')))
                               <tr>
 
                                   <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
